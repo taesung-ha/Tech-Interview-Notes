@@ -37,12 +37,12 @@ Click on each link to jump to the full explanation in `StrataScratch-Mistakes.md
 
 ## 📊 Sorting & Filtering
 
-- [Top Ranked Songs – Used `sort_values()` instead of `nlargest()`](StrataScratch-Mistakes.md#🧪-problem-top-ranked-songs)  
-  → Less efficient and potentially incorrect when dealing with duplicates.
+- [Order Details – Used `df['fisrt_name'] in list` instead of `df['first_name'].isin(list)`](Python-Mistakes.md#1-problem-order-details)  
+  → used `in` incorrectly to compare multiple values.
 
 ---
 
 ## 🧠 Notes
 
-- This is an index only — detailed explanations and code corrections live in `StrataScratch-Mistakes.md`.
+- This is an index only — detailed explanations and code corrections live in `Python-Mistakes.md`.
 - Add new links here whenever a new mistake is logged.

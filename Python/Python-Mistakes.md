@@ -5,54 +5,54 @@ Each entry includes the error, correct fix, missed function, and a key takeaway.
 
 ---
 
-## 🧪 [1] Problem: Lyft Driver Wages
-🔗 https://platform.stratascratch.com/coding/10308/lyft-driver-wages  
-📄 Tables: lyft_rides, lyft_drivers
+## 🧪 [1] Problem: Order Details
+🔗 https://platform.stratascratch.com/coding/9913-order-details?code_type=2  
+📄 DataFrames: `customers`, `orders`
 
 **❌ Mistake:**  
-Used `pd.merge()` without specifying `how`, resulting in an inner join that excluded drivers without matched rows.
+used `df_merge['first_name] in ['Jill', 'Eva']`. instead  of `df.isin(['Jill', 'Eva'])`.
 
 **✅ Fix:**  
-Use `how="left"` in `pd.merge()` to retain all left-hand entries.
+Use `df.isin(['Jill', 'Eva'])`
 
 ```python
 # ❌ Incorrect
-pd.merge(drivers, wages, on="driver_id")
+df_merge[df_merge['first_name'] in ['Jill', 'Eva']]
 
 # ✅ Correct
-pd.merge(drivers, wages, on="driver_id", how="left")
+df_merge[df_merge['first_name'].isin(['Jill', 'Eva'])]
 ```
-### 📌 Missed Function:
-`pd.merge()` Combines two DataFrames. Default `how='inner'` may drop rows.
-Set `how='left'` to preserve all from the left.
 
-### 💡 Insight:
-Never assume the default behavior of joins. Always write how= explicitly.
+**📌 Missed Function:**  
+`==` compares only a single value, whereas `df.isin()` can compare against multiple values at once, such as a list, series, or set. 
+
+**💡 Insight:**  
+Whenever you compare multiple values, use `df.isin()`.
 
 ---
 
-## 🧪 [2] Problem: User Retention
-🔗 https://platform.stratascratch.com/coding/10308/lyft-driver-wages  
-📄 Tables: lyft_rides, lyft_drivers
+## 🧪 [1] Problem: Order Details
+🔗 https://platform.stratascratch.com/coding/9913-order-details?code_type=2  
+📄 DataFrames: `customers`, `orders`
 
-**❌ Mistake:**
-Filtered string-formatted dates without converting to datetime → comparison silently failed.
+**❌ Mistake:**  
+used `df_merge['first_name] in ['Jill', 'Eva']`. instead  of `df.isin(['Jill', 'Eva'])`.
 
-**✅ Fix:**
-Convert to datetime before comparing.
+**✅ Fix:**  
+Use `df.isin(['Jill', 'Eva'])`
 
 ```python
-# ❌ Wrong
-df[df['event_date'] >= "2022-01-01"]
+# ❌ Incorrect
+df_merge[df_merge['first_name'] in ['Jill', 'Eva']]
 
 # ✅ Correct
-df['event_date'] = pd.to_datetime(df['event_date'])
-df[df['event_date'] >= "2022-01-01"]
+df_merge[df_merge['first_name'].isin(['Jill', 'Eva'])]
 ```
 
-### 📌 Missed Function:
-`pd.to_datetime(column)`
-Converts strings to datetime64 objects for filtering, plotting, and time-based operations.
+**📌 Missed Function:**  
+`==` compares only a single value, whereas `df.isin()` can compare against multiple values at once, such as a list, series, or set. 
 
-### 💡 Insight:
-Always confirm the data type before filtering dates. Use df.dtypes.
+**💡 Insight:**  
+Whenever you compare multiple values, use `df.isin()`.
+
+---

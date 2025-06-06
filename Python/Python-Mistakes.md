@@ -1,11 +1,11 @@
-# ❌ StrataScratch Mistakes (Python)
+# ❌ Python Mistakes 
 
 This is a growing log of mistakes I made while solving StrataScratch problems using Pandas.  
 Each entry includes the error, correct fix, missed function, and a key takeaway.
 
 ---
 
-## 🧪 [1] Problem: Lyft Driver Wages  
+## 🧪 [1] Problem: Lyft Driver Wages
 🔗 https://platform.stratascratch.com/coding/10308/lyft-driver-wages  
 📄 Tables: lyft_rides, lyft_drivers
 

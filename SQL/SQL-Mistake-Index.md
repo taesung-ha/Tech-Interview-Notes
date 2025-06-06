@@ -7,7 +7,7 @@ Grouped by concept for quick reference and pattern recognition.
 
 ## 🟦 JOIN Issues
 
-- Rising Temperature [(LeetCode 197)](https://leetcode.com/problems/rising-temperature/), [[Markdown]](SQL-Mistakes.md#🧪-1-problem-rising-temperature-leetcode-197)
+- [Rising Temperature (LeetCode 197)](https://leetcode.com/problems/rising-temperature/) [[Go to mistake]](SQL-Mistakes.md#-1-problem-rising-temperature-leetcode-197)
 
   → Forgot to use self-join to compare consecutive dates.
   

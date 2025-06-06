@@ -7,13 +7,15 @@ Grouped by concept for quick reference and pattern recognition.
 
 ## 🟦 JOIN Issues
 
-- [Rising Temperature (LeetCode 197)](https://leetcode.com/problems/rising-temperature/) [[Go to mistake]](SQL-Mistakes.md#-1-problem-rising-temperature-leetcode-197)
-
+- [Rising Temperature (LeetCode 197)](https://leetcode.com/problems/rising-temperature/) [[Go to mistake]](SQL-Mistakes.md#-1-problem-rising-temperature-leetcode-197)  
   → Forgot to use self-join to compare consecutive dates.
   
 
-- [Lyft Driver Wages (StrataScratch)](https://platform.stratascratch.com/coding/10308/lyft-driver-wages)  
-  → Used default INNER JOIN instead of LEFT JOIN, dropped unmatched rows.
+- [Average Time of Process per Machine (LeetCode 1661)](https://leetcode.com/problems/average-time-of-process-per-machine/description/?envType=study-plan-v2&envId=top-sql-50) [[Go to mistake]](SQL-Mistakes.md#-2-problem-average-time-of-process-per-machine-leetcode-1661)  
+  → Forgot to use mulitle `on` conditions for preprocessing.
+
+- [Students and Examinations (LeetCode 1280)](https://leetcode.com/problems/students-and-examinations/description/?envType=study-plan-v2&envId=top-sql-50) [[Go to mistake]](SQL-Mistakes.md#-3-problem-students-and-examinations-leetcode-1280)  
+  → Didn't know about using `CROSS JOIN`.
 
 ---
 

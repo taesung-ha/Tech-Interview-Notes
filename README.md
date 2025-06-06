@@ -3,7 +3,7 @@
 This repository is a personal notebook to review and reinforce core concepts in:
 
 - Data Structures & Algorithms (LeetCode)
-- SQL (LeetCode + StrataScratch)
+- Python & SQL (LeetCode + StrataScratch)
 - Machine Learning (ISLR + Practical ML)
 - Statistics (based on ISLR)
   

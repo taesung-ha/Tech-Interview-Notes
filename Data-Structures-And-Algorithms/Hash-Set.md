@@ -27,7 +27,7 @@
 🔗 https://leetcode.com/problems/unique-number-of-occurrences/description/?envType=study-plan-v2&envId=leetcode-75  
 
 **❌ Mistake:**  
-Tried to check whether all elements in the list are unique by implementing for-loop through the list and comparing each element with the wprevious one. 
+Tried to check whether all elements in the list are unique by implementing for-loop through the list and comparing each element with the previous one. 
 
 **✅ Fix:**  
 Use `len(set(list)) == len(list)`

@@ -15,4 +15,6 @@
 ## Linked List
 - [❌ Reverse Linked List](./LinkedList.md#-reverse-linked-list)
 
+## Hash and Set
+- [❌ Unique Number of Occurrences](Hash-Set.md#leetcode-1207-unique-number-of-occurrences)  
 ...

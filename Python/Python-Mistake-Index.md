@@ -37,9 +37,9 @@ Click on each link to jump to the full explanation in `StrataScratch-Mistakes.md
 
 ## 📊 Sorting & Filtering
 
-- [Order Details – Used `df['fisrt_name'] in list` instead of `df['first_name'].isin(list)`](Python-Mistakes.md#1-problem-order-details)  
-  → used `in` incorrectly to compare multiple values.
-
+- [Order Details – Used `df['fisrt_name'] in list` instead of `df['first_name'].isin(list)`](https://platform.stratascratch.com/coding/9913-order-details?code_type=2 )  
+  → used `in` incorrectly to compare multiple values.  
+  [[Go to Mistake]](Python-Mistakes.md#1-problem-order-details)
 ---
 
 ## 🧠 Notes

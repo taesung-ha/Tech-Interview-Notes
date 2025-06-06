@@ -12,7 +12,7 @@ Each entry includes what went wrong, the correct query or logic, missed function
 **❌ Mistake:**  
 attempted to use a join without realizing that the `DATEDIFF` function was needed to calculate the difference between dates.
 
-**✅ Fix:**
+**✅ Fix:**  
 Use self-join with `DATEDIFF = 1`.
 
 ```sql
@@ -22,13 +22,13 @@ JOIN Weather w2
   ON DATEDIFF(w1.recordDate, w2.recordDate) = 1
 WHERE w1.temperature > w2.temperature;
 ```
-### 📌 Missed Concept:
+**📌 Missed Concept:**
 
 - `DATEDIFF()` returns the number of days between two dates
 
 - Self joins help compare rows across time
 
-### 💡 Insight:
+**💡 Insight:**  
 Temporal comparisons in SQL often require joining table to itself.
 
 ---
@@ -40,7 +40,7 @@ Temporal comparisons in SQL often require joining table to itself.
 **❌ Mistake:**  
 failed to consider preprocessing by joining the table itself using `on` condition, and instead tried to split the table using `WHERE` clause, which made the code unnecessarily complicated.
 
-**✅ Fix:**
+**✅ Fix:**  
 Use self-join with multiple `on` conditions.
 
 ```sql
@@ -53,12 +53,12 @@ AND a1.activity_type = 'start'
 AND a2.activity_type = 'end'
 GROUP BY machine_id
 ```
-### 📌 Missed Concept:
+**📌 Missed Concept:**
 
 - self `join` method
 - multiple `on` conditions
 
-### 💡 Insight:
+**💡 Insight:**  
 Whenever you want to separate multiple states and perform cacluation for each row accordingly, you don't need to split the table. It's possible using a `self-join` and multiple `on` condtions.
 
 ---
@@ -68,9 +68,9 @@ Whenever you want to separate multiple states and perform cacluation for each ro
 📄 Table: `Students`
 
 **❌ Mistake:**  
-tried to create a table of every students with every subject **without** using `CROSS JOIN` function. 
+Tried to create a table of every students with every subject **without** using `CROSS JOIN` function. 
 
-**✅ Fix:**
+**✅ Fix:**  
 Use `CROSS JOIN` to create a table of every students with every subject
 
 ```sql
@@ -83,9 +83,8 @@ AND ss.subject_name = e.subject_name
 GROUP BY ss.student_id, ss.subject_name
 ORDER BY ss.student_id
 ```
-### 📌 Missed Concept:
-
+**📌 Missed Concept:**
 - `CROSS JOIN` function
 
-### 💡 Insight:
+**💡 Insight:**  
 When you want to create a table that represents **every field with every other fields**, use a `CROSS JOIN` function.

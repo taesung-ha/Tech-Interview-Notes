@@ -1,16 +1,38 @@
-# 📘 Array
+# 📘 Arrays and Strings
 
 ## ✅ Summary
-- Arrays store elements in contiguous memory with O(1) access.
-- Common use cases: search, sliding window, prefix sums, two pointers.
+- Python uses `list` instead of traditional arrays.
+- Strings are **immutable** in Python — modifying them means creating a new one.
+- Two pointers just refers to using two integer variables to move along some iterables. 
+
+---
 
 ## 🔁 Common Patterns
 
-| Pattern        | Example Problem         | Description                         |
-|----------------|--------------------------|-------------------------------------|
-| Sliding Window | LeetCode 209             | Maintain a moving window            |
-| Two Pointers   | LeetCode 26              | Use two indices to track conditions |
-| Prefix Sum     | LeetCode 560             | Store cumulative sums               |
+---
+
+## 🔹 Pattern 1: Two Pointers
+
+| Item               | Description |
+|--------------------|-------------|
+| **Core Idea**       | Start the pointers at the edge of the input. Move them towards each other until they meet. ***Note: two pointers do not always mean that left and right. It also can be i, j for arr1, arr2.**|
+| **Strength**     | Never have more than O(n) iterations for the while loop. |
+| **Typical Use Cases** | Max/min subarray length, unique element window, averages |
+| **Common Mistakes** | Forgetting to shrink window properly, not resetting running sums |
+| **Python Tips**     | Use `while` with `left<right` condition. 
+| **Sample Code**     |
+
+```python
+left = 0
+right = len(arr)-1
+
+while left < right:
+    Do some logic here depending on the problem
+    Do some more logic here to decide on one of the following:
+        1. left ++
+        2. right --
+        3. Both left += and right --
+```
 
 ## 🧠 Edge Cases & Mistakes
 - Off-by-one errors

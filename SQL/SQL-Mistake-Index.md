@@ -41,8 +41,8 @@ Grouped by concept for quick reference and pattern recognition.
 
 ## 🟥 Window Functions
 
-- [Top 3 Salaries (LeetCode 177)](https://leetcode.com/problems/nth-highest-salary/)  
-  → Used `LIMIT` but forgot about dense rank via `ROW_NUMBER()`.
+- [Users By Average Session Time](https://platform.stratascratch.com/coding/10352-users-by-avg-session-time?code_type=1)  
+  → failed to perform `left join` while preservering the row order of both tables.
 
 - [Rolling Revenue (StrataScratch)](https://platform.stratascratch.com/coding/10145/rolling-revenue)  
   → Didn't partition by user, window summed all rows.
@@ -51,8 +51,8 @@ Grouped by concept for quick reference and pattern recognition.
 
 ## 🟩 Subqueries / Filtering
 
-- [Second Highest Salary (LeetCode 176)](https://leetcode.com/problems/second-highest-salary/)  
-  → Wrote incorrect subquery with LIMIT 1 and OFFSET but missed `NULL` case.
+- [Salaries Differences](https://leetcode.com/problems/second-highest-salary/)  
+  → Failed to calculate the salary difference between the first and second rows.
 
 - [Duplicate Emails (LeetCode 196)](https://leetcode.com/problems/duplicate-emails/)  
   → Used `WHERE` without GROUP BY HAVING COUNT > 1.

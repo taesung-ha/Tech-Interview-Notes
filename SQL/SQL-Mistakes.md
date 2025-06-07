@@ -88,3 +88,98 @@ ORDER BY ss.student_id
 
 **💡 Insight:**  
 When you want to create a table that represents **every field with every other fields**, use a `CROSS JOIN` function.
+
+---
+
+## 🧪 [4] Problem: Salaries Differences
+🔗 https://platform.stratascratch.com/coding/10308-salaries-differences?code_type=1  
+📄 Table: `db_employee`, `db_dept`
+
+**❌ Mistake:**  
+failed to calculate the salary difference between the first and second rows. 
+
+**✅ Fix:**  
+Use `LIMIT 1` and `LIMIT 1 OFFSET 1` to calculate the difference between the first and second rows. 
+
+```sql
+select
+(select
+    max(e.salary)
+from
+    db_employee as e
+left join
+    db_dept as d
+on
+    e.department_id = d.id
+where
+    d.department = 'engineering' or d.department = 'marketing'
+group by
+    d.department
+limit 1
+offset 1)
+```
+**📌 Missed Concept:**
+- `LIMIT 1`, `OFFSET 1` function
+
+**💡 Insight:**  
+When you want to calculate the difference between first two rows, use `LIMIT 1` and `OFFSET 1`.
+
+---
+
+## 🧪 [5] Users By Average Session Time
+🔗 https://platform.stratascratch.com/coding/10352-users-by-avg-session-time?code_type=1  
+📄 Table: `facebook_web_log`
+
+**❌ Mistake:**  
+failed to perform `left join` while preservering the row order of both tables.
+
+**✅ Fix:**  
+USE `row_number() over (partition by user_id order by max(timestamp)) as rn`
+
+```sql
+with page_load_date as (
+select
+    user_id,
+    max(timestamp),
+    row_number () over (partition by user_id order by max(timestamp)) as rn
+from
+    facebook_web_log
+where
+    action = 'page_load'
+group by
+    user_id, date(timestamp)
+),
+page_exit_date as (
+select
+    user_id,
+    min(timestamp),
+    row_number () over (partition by user_id order by min(timestamp)) as rn
+from
+    facebook_web_log
+where
+    action = 'page_exit'
+group by
+    user_id, date(timestamp)
+)
+
+select
+    l.user_id,
+    avg(e.min - l.max)
+from
+    page_load_date as l
+left join
+    page_exit_date as e
+on
+    l.user_id = e.user_id
+and
+    l.rn = e.rn
+where
+    e.min-l.max is not null
+group by
+    l.user_id
+```
+**📌 Missed Concept:**
+- `row_number()` window function. 
+
+**💡 Insight:**  
+Whenever you want to merge the two tables while preserving the original row order, use `row_number()` and define `on` conditions regarding it. 

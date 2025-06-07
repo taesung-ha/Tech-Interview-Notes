@@ -40,6 +40,10 @@ Click on each link to jump to the full explanation in `StrataScratch-Mistakes.md
 - [Order Details – Used `df['fisrt_name'] in list` instead of `df['first_name'].isin(list)`](https://platform.stratascratch.com/coding/9913-order-details?code_type=2 )  
   → used `in` incorrectly to compare multiple values.  
   [[Go to Mistake]](Python-Mistakes.md#1-problem-order-details)
+
+- [Income By Title and Gender – use `df['column'].notna()` to identify not NAN values.](https://platform.stratascratch.com/coding/10077-income-by-title-and-gender?code_type=2)  
+  → Whenever you want to filter not NAN value, use `df['column'].notna()`  
+  [[Go to Mistake]](Python-Mistakes.md#1-income-by-title-and-gender)
 ---
 
 ## 🧠 Notes

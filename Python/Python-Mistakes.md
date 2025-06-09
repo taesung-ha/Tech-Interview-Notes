@@ -84,3 +84,53 @@ Use `.dt.strftime('%Y-%m')` to convert the date format.
 ```python
 orders['order_month'] = orders['order_date'].dt.strftime('%Y-%m')
 ```
+
+---
+
+## 🧪 [5] Problem: Max Number of K-Sum Pairs (Leetcode 1679)
+
+🔗 https://leetcode.com/problems/max-number-of-k-sum-pairs/description/?envType=study-plan-v2&envId=leetcode-75  
+
+**❌ Mistake:**  
+Used multiple `if` conditions even though they are not mutually exclusive, so they ended up being triggered simultaneously. 
+
+**✅ Fix:**  
+Use `elif` instead of `if` or use multiple `if` conditions in a mutually exclusive way. 
+
+```python
+# Mistake
+sorted_num = sorted(nums)
+left = 0
+right = len(nums)-1
+ans = 0
+while left < right:
+    curr = sorted_num[left] + sorted_num[right]
+    if curr == k:
+        ans += 1
+        left += 1
+        right -= 1
+    if curr > k:
+        right -= 1
+    if curr <= k:
+        left += 1
+#Fixed
+sorted_num = sorted(nums)
+        left = 0
+        right = len(nums)-1
+        ans = 0
+        while left < right:
+            curr = sorted_num[left] + sorted_num[right]
+            if curr == k:
+                ans += 1
+                left += 1
+                right -= 1
+            elif curr > k:
+                right -= 1
+            elif curr < k:
+                left += 1
+        
+        return ans
+```
+
+**💡 Insight:**  
+When using multiple `if` conditions, always be careful of whether the conditions are mutually exclusive. Whenever possible, use elif in order to prevent logical errors. 

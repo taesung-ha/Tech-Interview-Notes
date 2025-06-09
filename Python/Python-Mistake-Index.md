@@ -46,6 +46,13 @@ Click on each link to jump to the full explanation in `StrataScratch-Mistakes.md
   [[Go to Mistake]](Python-Mistakes.md#1-income-by-title-and-gender)
 ---
 
+## 📊 Logical Issues
+
+- [Max Number of K-Sum Pairs – Used multiple `if` conditions even though they are not mutually exclusive](Python-Mistakes.md#5-problem-Max-Number-of-K-sum-Pairs-Leetcode-1679)  
+  → When using multiple `if` conditions, always be careful of whether the conditions are mutually exclusive.
+
+
+
 ## 🧠 Notes
 
 - This is an index only — detailed explanations and code corrections live in `Python-Mistakes.md`.

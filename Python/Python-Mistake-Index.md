@@ -16,7 +16,7 @@ Click on each link to jump to the full explanation in `StrataScratch-Mistakes.md
 
 ## 📆 Date & Time Handling
 
-- [User Retention – Forgot to convert string to datetime](StrataScratch-Mistakes.md#🧪-problem-user-retention)  
+- [Customer Revenue in March – Forgot how to convert 'YYYY-mm-dd' to 'YYYY-mm'](Python-Mistakes.md#4-problem-customer-revenue-in-march)  
   → Filtering didn’t work as expected due to string comparison.
 
 ---
@@ -24,7 +24,7 @@ Click on each link to jump to the full explanation in `StrataScratch-Mistakes.md
 ## 🧮 GroupBy & Aggregation
 
 - [Total Transactions Per Customer – Forgot to reset index](Python-Mistakes.md#-problem-total-transactions-per-customer)  
-  → Result was a Series, not a DataFrame.
+  → Use `.dt.strftime('%Y-%m')` to convert the date format.
 
 ---
 

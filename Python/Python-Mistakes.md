@@ -55,7 +55,6 @@ Forgot how to structure multiple `else` conditions in `lambda` function.
 Use multiple else branches in a lambda expression. 
 
 ```python
-# ❌ Incorrect
 sf_restaurant_health_violations['business_name'].apply(
     lambda x: 'restaurant' if 'restaurant' in x.lower()
     else 'cafe' if 'cafe' in (x.lower()) or ('café' in x.lower()) or ('coffee' in x.lower())
@@ -68,3 +67,20 @@ sf_restaurant_health_violations['business_name'].apply(
 
 **💡 Insight:**  
 `else` is used not only for other conditions, but also represent the 'remaining' or 'default' case.
+
+---
+
+## 🧪 [4] Problem: Customer Revenue in March
+
+🔗 https://platform.stratascratch.com/coding/9782-customer-revenue-in-march?code_type=2   
+📄 DataFrames: `orders`
+
+**❌ Mistake:**  
+Forgot how to convert 'YYYY-mm-dd' to 'YYYY-mm'. 
+
+**✅ Fix:**  
+Use `.dt.strftime('%Y-%m')` to convert the date format.
+
+```python
+orders['order_month'] = orders['order_date'].dt.strftime('%Y-%m')
+```

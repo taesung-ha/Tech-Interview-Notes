@@ -23,15 +23,15 @@ Click on each link to jump to the full explanation in `StrataScratch-Mistakes.md
 
 ## 🧮 GroupBy & Aggregation
 
-- [Total Transactions Per Customer – Forgot to reset index](StrataScratch-Mistakes.md#🧪-problem-total-transactions-per-customer)  
+- [Total Transactions Per Customer – Forgot to reset index](Python-Mistakes.md#-problem-total-transactions-per-customer)  
   → Result was a Series, not a DataFrame.
 
 ---
 
 ## 🔁 Apply / Lambda Functions
 
-- [String Cleaning – Misused `lambda` inside `apply()`](StrataScratch-Mistakes.md#🧪-problem-string-cleaning)  
-  → Mixed up `str.strip()` and `lambda x: x.strip()`.
+- [Classify Business Type – Forgot how to structure multiple `else` conditions in `lambda` function](Python-Mistakes.md#3-problem-classify-business-type)  
+  → `else` is used not only for other conditions, but also represent the 'remaining' or 'default' case.
 
 ---
 

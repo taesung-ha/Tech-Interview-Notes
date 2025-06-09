@@ -42,3 +42,29 @@ Whenever you compare multiple values, use `df.isin()`.
 Whenever you want to filter not NAN value, use `df['column'].notna()`.
 
 ---
+
+## 🧪 [3] Problem: Classify Business Type
+
+🔗 https://platform.stratascratch.com/coding/9726-classify-business-type?code_type=2  
+📄 DataFrames: `sf_restaurant_health_violations`
+
+**❌ Mistake:**  
+Forgot how to structure multiple `else` conditions in `lambda` function.
+
+**✅ Fix:**  
+Use multiple else branches in a lambda expression. 
+
+```python
+# ❌ Incorrect
+sf_restaurant_health_violations['business_name'].apply(
+    lambda x: 'restaurant' if 'restaurant' in x.lower()
+    else 'cafe' if 'cafe' in (x.lower()) or ('café' in x.lower()) or ('coffee' in x.lower())
+    else 'school' if 'school' in x.lower()
+    else 'other')
+```
+
+**📌 Missed Function:**  
+(1) Multiple `else` can be used in `lambda` function (2) `x.lower()` is used to convert a word to lowercase. 
+
+**💡 Insight:**  
+`else` is used not only for other conditions, but also represent the 'remaining' or 'default' case.

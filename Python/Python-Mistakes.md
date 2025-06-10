@@ -134,3 +134,27 @@ sorted_num = sorted(nums)
 
 **💡 Insight:**  
 When using multiple `if` conditions, always be careful of whether the conditions are mutually exclusive. Whenever possible, use elif in order to prevent logical errors. 
+
+---
+
+## 🧪 [6] Problem: Apple Product Counts
+
+🔗 https://platform.stratascratch.com/coding/10141-apple-product-counts?code_type=2
+
+**❌ Mistake:**  
+forgot how to count distinct value for the column and how to fill 0 for the the null values instead of the blank.
+
+**✅ Fix:**  
+- Use `df.groupby['column1'][''column2'].nunique()` to count distinct value.
+- Use `df.fillna(0)` to fill null values.
+
+```python
+apple_language = apple_df.groupby('language')['user_id'].nuique().reset_index()
+total['n_apple_users'] = total['n_apple_users'].fillna(0)
+```
+
+**💡 Insight:**  
+- Whenever you count the distinct value for the column, don't forget `df['column'].nuinque()`
+- To fill null values with 0, use `df['column1'].fillna(0)`
+
+---

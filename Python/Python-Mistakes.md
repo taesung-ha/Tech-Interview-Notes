@@ -1,4 +1,4 @@
-# ❌ Python Mistakes 
+# Python Mistakes 
 
 This is a growing log of mistakes I made while solving StrataScratch problems using Pandas.  
 Each entry includes the error, correct fix, missed function, and a key takeaway.

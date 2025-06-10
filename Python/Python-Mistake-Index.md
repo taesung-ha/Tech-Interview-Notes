@@ -1,4 +1,4 @@
-# ❌ Python Mistake Index (StrataScratch / Pandas)
+# Python Mistake Index (StrataScratch / Pandas)
 
 A categorized list of Python mistakes made while solving StrataScratch problems using Pandas.
 

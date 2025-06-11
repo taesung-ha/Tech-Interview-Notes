@@ -117,3 +117,32 @@ Used `pd.merge()` without specifying `how`, resulting in an inner join that excl
 
 **✅ Fix:**  
 Use `how="left"` in `pd.merge()` to retain all left-hand entries.
+
+---
+
+### ❌ LeetCode - Containter With Most Water
+🔗 https://leetcode.com/problems/container-with-most-water/description/?envType=study-plan-v2&envId=leetcode-75  
+
+**❌ Mistake:**  
+Didn't realize that, when comparing the heights of the left and right sides, you need to move the pointer at the lower height in order to have a chance at increasing the total amount of water that can be contained. 
+
+```python
+class Solution:
+    def maxArea(self, height: List[int]) -> int:
+        left = 0
+        right = len(height)-1
+        ans = 0
+        while left < right:
+            horizontal = right - left
+            vertical = min(height[right], height[left])
+            ans = max(ans, horizontal * vertical)
+            if height[right] > height[left]:
+                left += 1
+            else:
+                right -= 1
+        
+        return ans
+```
+
+### 💡 Insight:  
+To achieve efficient time complexity, avoid implementing O($n^2$) time complexity. Instead, pay human brain cost. 

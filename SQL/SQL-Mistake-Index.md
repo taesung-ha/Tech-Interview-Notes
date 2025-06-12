@@ -47,6 +47,9 @@ Grouped by concept for quick reference and pattern recognition.
 - [Rolling Revenue (StrataScratch)](https://platform.stratascratch.com/coding/10145/rolling-revenue)  
   → Didn't partition by user, window summed all rows.
 
+- [Ranking Most Active Guests](https://platform.stratascratch.com/coding/10159-ranking-most-active-guests?code_type=2)  
+  → Forgot how to add rank field.
+
 ---
 
 ## 🟩 Subqueries / Filtering

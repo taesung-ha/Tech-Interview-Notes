@@ -183,3 +183,34 @@ group by
 
 **💡 Insight:**  
 Whenever you want to merge the two tables while preserving the original row order, use `row_number()` and define `on` conditions regarding it. 
+
+---
+
+## 🧪 [6] Problem: Ranking Most Active Guests
+🔗 https://platform.stratascratch.com/coding/10159-ranking-most-active-guests?code_type=2  
+📄 Table: `airbnb_contacts`
+
+**❌ Mistake:**  
+Forgot how to add rank field.
+
+**✅ Fix:**  
+Use `dense_rank over (order by column desc) as rn
+
+```sql
+select
+    dense_rank() over (order by sum(n_messages) desc) as ranking,
+    id_guest,
+    sum(n_messages) as sum_n_messages
+from
+    airbnb_contacts
+group by
+    id_guest
+```
+**📌 Missed Concept:**
+- `dense_rank() over (order by column desc)`
+
+**💡 Insight:**  
+Whenever you want to add rank column without skip any ranking numbers, use `dense_rank() over (order by column asc)`.
+
+---
+

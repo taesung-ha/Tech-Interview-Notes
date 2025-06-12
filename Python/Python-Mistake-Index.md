@@ -45,6 +45,10 @@ Click on each link to jump to the full explanation in `StrataScratch-Mistakes.md
   → Whenever you want to filter not NAN value, use `df['column'].notna()`  
   [[Go to Mistake]](Python-Mistakes.md#1-income-by-title-and-gender)
 
+- [Ranking Most Active Guests – Didn't know how to append rank column by python](https://platform.stratascratch.com/coding/10159-ranking-most-active-guests?code_type=2)  
+  → Use `df['ranking'] = df['column'].rank(ascending=True, method = 'dense')` to add ranking columns to existing dataframe. 
+  [[Go to Mistake]](Python-Mistakes.md#7-problem-ranking-most-active-guests)
+
 ---
 
 ## Null Value Processing

@@ -158,3 +158,21 @@ total['n_apple_users'] = total['n_apple_users'].fillna(0)
 - To fill null values with 0, use `df['column1'].fillna(0)`
 
 ---
+
+## 🧪 [7] Problem: Ranking Most Active Guests
+
+🔗 https://platform.stratascratch.com/coding/10159-ranking-most-active-guests?code_type=2
+📄 DataFrames: `airbnb_contacts`
+
+**📌 Missed Function:**  
+Didn't know how to append rank column by python.
+
+**✅ Fix:**  
+Use `df['ranking'] = df['column'].rank(ascending=True, method = 'dense')` to add ranking columns to existing dataframe.
+
+```python
+df_groupby['ranking'] = df_groupby['n_messages'].rank(ascending=False, method='dense')
+```
+
+---
+

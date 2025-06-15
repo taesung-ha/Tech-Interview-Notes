@@ -108,42 +108,27 @@ def find_longest_substring(s,k):
 ```
 
 ### 🧠 Edge Cases & Mistakes
-- Off-by-one errors
-- Forgetting to reset state
-- Overflow in sum calculations
+
 
 ### 💡 Tips
-- Use `enumerate()` for index-value pairing in Python
-- Watch out for constraints like "in-place"
 
-### 🧪 Mistake Log
 
-#### ❌ LeetCode 1207 - Unique Number of Occurrences
+### 🧪 Mistake Logs
+
+#### ❌ LeetCode 
 🔗  
 
 **❌ Mistake:**  
-Tried to check whether all elements in the list are unique by implementing for-loop through the list and comparing each element with the previous one. 
+
 
 **✅ Fix:**  
-Use `len(set(list)) == len(list)`
 
 ```python
-len(set(dic.values())) == len(dic.values())
 ```
 **📌 Missed Function:**  
-`set(list)` returns the unique value in the list. So if we compare the `len(set(list))` with `len(list)`, then we can check whether all elements in the list are unique. 
+
 
 **💡 Insight:**  
-Comparing the current and previous value in a for loop is not an appropriate method for checking whether all elements in the list are unique. 
 
----
 
-#### ❌ LeetCode 52 - Maximum Subarray
-🔗 https://platform.stratascratch.com/coding/10308/lyft-driver-wages  
-📄 Tables: `lyft_rides`, `lyft_drivers`
 
-**❌ Mistake:**  
-Used `pd.merge()` without specifying `how`, resulting in an inner join that excluded drivers without matched rows.
-
-**✅ Fix:**  
-Use `how="left"` in `pd.merge()` to retain all left-hand entries.

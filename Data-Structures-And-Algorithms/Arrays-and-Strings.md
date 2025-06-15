@@ -7,10 +7,6 @@
 
 ---
 
-## 🔁 Common Patterns
-
----
-
 ## 🔹 Pattern 1: Two Pointers
 
 | Item               | Description |

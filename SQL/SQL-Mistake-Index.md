@@ -60,12 +60,18 @@ Grouped by concept for quick reference and pattern recognition.
 - [Duplicate Emails (LeetCode 196)](https://leetcode.com/problems/duplicate-emails/)  
   → Used `WHERE` without GROUP BY HAVING COUNT > 1.
 
+- [Aromba-based Winery Search](https://platform.stratascratch.com/coding/10026-find-all-wineries-which-produce-wines-by-possessing-aromas-of-plum-cherry-rose-or-hazelnut?code_type=2  )  
+  → Wasn't familiar with regular expression syntax.
+
 ---
 
 ## 🟫 Miscellaneous
 
-- [Big Countries (LeetCode 595)](https://leetcode.com/problems/big-countries/)  
-  → Missed that OR logic was required for two conditions.
+- [Spam Posts](https://platform.stratascratch.com/coding/10134-spam-posts?code_type=2  )  
+  → Didn't realize that explicitly specify the float (or decimal) data type when calculating numbers.
+
+- [Reviews of Categories](https://platform.stratascratch.com/coding/10049-reviews-of-categories/official-solution?code_type=1)  
+  → Didn't know how to split the columns based on the specific string. 
 
 ---
 

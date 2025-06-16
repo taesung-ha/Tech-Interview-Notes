@@ -176,3 +176,40 @@ df_groupby['ranking'] = df_groupby['n_messages'].rank(ascending=False, method='d
 
 ---
 
+## 🧪 [8] Problem: Aroma-based Winery Search
+
+🔗 https://platform.stratascratch.com/coding/10026-find-all-wineries-which-produce-wines-by-possessing-aromas-of-plum-cherry-rose-or-hazelnut?code_type=1  
+📄 DataFrames: `winemag_p1`
+
+**📌 Missed Function:**  
+wasn't familiar with regular expression in Python
+
+**✅ Fix:**  
+Use Regular expression to filter the data that contains a specific string.
+
+```python
+aromas = ['plum', 'cherry', 'rose', 'hazelnut']
+patterns = r'\b(?:' + ''.join(aromas) + r')\b'
+winemag_p1[winemag_p1['description'].str.contains(patterns, case=False, regex=True)]
+```
+
+---
+
+## 🧪 [9] Problem: Review of Categories
+
+🔗 https://platform.stratascratch.com/coding/10049-reviews-of-categories?code_type=2
+
+**❌ Mistake:**  
+Didn't know how to split the columns based on the specific string. 
+
+**✅ Fix:**  
+Use `df['column'].str.split(';')`
+
+```python
+yelp_business['categories'] = yelp_business['categories'].str.split(';')
+df = yelp_business.explode('categories')
+df.groupby('categories')['review_count'].sum().reset_index().sort_values(by='review_count', ascending=False)
+```
+
+**💡 Insight:**  
+- If a specific column contains multiple values concatenated together, use `df['column'].str.split(';')` to split them within each row.

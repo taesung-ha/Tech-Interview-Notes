@@ -186,7 +186,7 @@ Whenever you want to merge the two tables while preserving the original row orde
 
 ---
 
-## 🧪 [6] Problem: Ranking Most Active Guests
+## 🧪 [7] Problem: Ranking Most Active Guests
 🔗 https://platform.stratascratch.com/coding/10159-ranking-most-active-guests?code_type=2  
 📄 Table: `airbnb_contacts`
 
@@ -214,3 +214,92 @@ Whenever you want to add rank column without skip any ranking numbers, use `dens
 
 ---
 
+## 🧪 [8] Problem: Aromba-based Winery Search
+🔗 https://platform.stratascratch.com/coding/10026-find-all-wineries-which-produce-wines-by-possessing-aromas-of-plum-cherry-rose-or-hazelnut?code_type=2   
+📄 Table: `winemag_p1`
+
+**❌ Mistake:**  
+Wasn't familiar with regular expression syntax. 
+
+```sql
+SELECT *
+FROM winemag_p1
+WHERE description ~* '\y(plum|cherry|rose|hazelnut)\y'
+```
+
+**💡 Insight:**  
+Whenever you want to filter data that contains a specific string, use regular expressions. 
+---
+
+## 🧪 [9] Problem: Spam Posts
+🔗 https://platform.stratascratch.com/coding/10134-spam-posts?code_type=2  
+📄 Table: `facebook_posts`, `facebook_post_views`
+
+**❌ Mistake:**  
+Didn't realize that explicitly specify the float (or decimal) data type when calculating numbers.
+
+**✅ Fix:**  
+Use `cast( as float)` to specify the number as float type. 
+
+```sql
+with table1 as (
+select 
+    *
+from 
+    facebook_posts as p
+left join
+    facebook_post_views as v
+on
+    p.post_id = v.post_id
+where
+    v.viewer_id is not null
+)
+
+select
+    sub1.post_date,
+    cast(sum(spam) as float) / count(*) * 100 as spam_sphere
+from (select
+    post_date,
+    case
+        when post_keywords like '%#spam#%' then 1
+        else 0
+    end as spam
+from
+    table1) as sub1
+group by
+    post_date
+```
+**📌 Missed Concept:**
+- `cast(sum(spam) as float)`
+
+**💡 Insight:**  
+In SQL, it's important to explicitly specify the float (or decimal) data type, especially because division operations are often performed using integer-based arithmetic by default. 
+
+---
+
+## 🧪 [10] Problem: Reviews of Categories
+🔗 https://platform.stratascratch.com/coding/10049-reviews-of-categories?code_type=2  
+📄 Table: `yelp_business`
+
+**❌ Mistake:**  
+Didn't know how to split the columns based on the specific string. 
+
+**✅ Fix:**  
+Use `unnest(string_to_array(categories, ';')`
+
+```sql
+select
+    unnest(string_to_array(categories, ';')) as category,
+    sum(review_count) as review_cnt
+from
+    yelp_business
+group by
+    unnest(string_to_array(categories, ';'))
+order by 
+    sum(review_count) desc
+```
+**📌 Missed Concept:**
+- `unnest(string_to_array(categories, ';')`
+
+**💡 Insight:**  
+If a column contains multiple values concatenated together, first use `string_to_array` to split them, and then use `unnest` to separate them into individual rows.

@@ -51,10 +51,21 @@ Click on each link to jump to the full explanation in `StrataScratch-Mistakes.md
 
 ---
 
-## Null Value Processing
+## Data Processing
 - [Apple Product Counts – forgot how to count distinct value for the column and how to fill 0 for the the null values](https://platform.stratascratch.com/coding/10141-apple-product-counts?code_type=2 )  
   → used `in` incorrectly to compare multiple values.  
   [[Go to Mistake]](Python-Mistakes.md#6-apple-product-counts)
+
+- [Review of Categories – Didn't know how to split the columns based on the specific string](https://platform.stratascratch.com/coding/10049-reviews-of-categories?code_type=2)  
+  → If a specific column contains multiple values concatenated together, use `df['column'].str.split(';')` to split them within each row. 
+  [[Go to Mistake]](Python-Mistakes.md#9-review-of-categories)
+
+---
+
+## Regular Expression
+- [Aromba-based Winery Search – Wasn't familiar with regular expression syntax](https://platform.stratascratch.com/coding/10026-find-all-wineries-which-produce-wines-by-possessing-aromas-of-plum-cherry-rose-or-hazelnut?code_type=2)  
+  → Whenever you want to filter data that contains a specific string, use regular expressions.  
+  [[Go to Mistake]](Python-Mistakes.md#8-Aroma-based-Winery-Search)
 
 ---
 

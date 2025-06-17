@@ -197,10 +197,11 @@ winemag_p1[winemag_p1['description'].str.contains(patterns, case=False, regex=Tr
 
 ## 🧪 [9] Problem: Review of Categories
 
-🔗 https://platform.stratascratch.com/coding/10049-reviews-of-categories?code_type=2
+🔗  https://platform.stratascratch.com/coding/10049-reviews-of-categories?code_type=2  
 
 **❌ Mistake:**  
 Didn't know how to split the columns based on the specific string. 
+
 
 **✅ Fix:**  
 Use `df['column'].str.split(';')`
@@ -213,3 +214,51 @@ df.groupby('categories')['review_count'].sum().reset_index().sort_values(by='rev
 
 **💡 Insight:**  
 - If a specific column contains multiple values concatenated together, use `df['column'].str.split(';')` to split them within each row.
+
+---
+
+## 🧪 [10] Problem: Shortest Path in Binary Matrix
+
+🔗 https://leetcode.com/problems/shortest-path-in-binary-matrix/description/ 
+
+**❌ Mistake:**  
+Forgot to include `[]` when using `set` or `deque`. 
+
+**✅ Fix:**  
+Includ `[]` because a list needs to be passed into deque. 
+
+```python
+from collections import deque
+
+class Solution:
+    def shortestPathBinaryMatrix(self, grid: List[List[int]]) -> int:
+        if grid[0][0] == 1:
+            return -1
+        
+        def valid(row, col):
+            return 0 <= row < n and 0 <= col < n and grid[row][col] == 0
+        
+        n = len(grid)
+        seen = {(0, 0)}
+        queue = deque([(0, 0, 1)]) # row, col, steps
+        directions = [(0, 1), (1, 0), (1, 1), (-1, -1), (-1, 1), (1, -1), (0, -1), (-1, 0)]
+        
+        while queue:
+            row, col, steps = queue.popleft()
+            if (row, col) == (n - 1, n - 1):
+                return steps
+            
+            for dx, dy in directions:
+                next_row, next_col = row + dy, col + dx
+                if valid(next_row, next_col) and (next_row, next_col) not in seen:
+                    seen.add((next_row, next_col))
+                    queue.append((next_row, next_col, steps + 1))
+        
+        return -1
+```
+
+**💡 Insight:**  
+- Whenever you need to continue adding value to the deque, wrap them in a list. 
+
+---
+

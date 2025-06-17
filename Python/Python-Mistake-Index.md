@@ -74,6 +74,8 @@ Click on each link to jump to the full explanation in `StrataScratch-Mistakes.md
 - [Max Number of K-Sum Pairs – Used multiple `if` conditions even though they are not mutually exclusive](Python-Mistakes.md#5-problem-Max-Number-of-K-sum-Pairs-Leetcode-1679)  
   → When using multiple `if` conditions, always be careful of whether the conditions are mutually exclusive.
 
+- [Shortest Path in Binary Matrix – Forgot to include `[]` when using `set` or `deque`](Python-Mistakes.md#10-problem-shortest-path-in-binary-matrix)  
+  → Whenever you need to continue adding value to the deque, wrap them in a list. 
 ---
 
 ## 🧠 Notes

@@ -225,7 +225,7 @@ df.groupby('categories')['review_count'].sum().reset_index().sort_values(by='rev
 Forgot to include `[]` when using `set` or `deque`. 
 
 **✅ Fix:**  
-Includ `[]` because a list needs to be passed into deque. 
+Include `[]` because a list needs to be passed into deque. 
 
 ```python
 from collections import deque

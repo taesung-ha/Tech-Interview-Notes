@@ -37,6 +37,8 @@ Grouped by concept for quick reference and pattern recognition.
 - [Average Daily Sales (Custom)](https://platform.stratascratch.com/coding/12345/avg-daily-sales)  
   → Grouped by `created_at` without truncating to day.
 
+- [Average Daily Sales (Custom)](https://platform.stratascratch.com/coding/12345/avg-daily-sales)  
+  → Grouped by `created_at` without truncating to day.
 ---
 
 ## 🟥 Window Functions
@@ -47,8 +49,8 @@ Grouped by concept for quick reference and pattern recognition.
 - [Rolling Revenue (StrataScratch)](https://platform.stratascratch.com/coding/10145/rolling-revenue)  
   → Didn't partition by user, window summed all rows.
 
-- [Ranking Most Active Guests](https://platform.stratascratch.com/coding/10159-ranking-most-active-guests?code_type=2)  
-  → Forgot how to add rank field.
+- [Users By Average Session Time](https://platform.stratascratch.com/coding/2007-rank-variance-per-country?python=&utm_source=youtube&utm_medium=click&utm_campaign=YT+description+link&code_type=1)  
+  → Failed to convert date column into the desired string format
 
 ---
 

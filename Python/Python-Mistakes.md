@@ -262,3 +262,26 @@ class Solution:
 
 ---
 
+## 🧪 [11] Problem: Top Percentile Fraud
+
+🔗 https://platform.stratascratch.com/coding/10303-top-percentile-fraud?code_type=2
+
+**❌ Mistake:**  
+Didn't know how to calculate the top 5 perentile of claims with the highest fraud scores. 
+
+**✅ Fix:**  
+Use `df.groupby['group']['column'].percentile(0.95)`
+
+```python
+import pandas as pd
+
+# Start writing code
+thresholds = fraud_score.groupby('state')['fraud_score'].quantile(0.95).reset_index()
+thresholds.columns = ['state', 'threshold']
+
+df_with_thresholds = pd.merge(fraud_score, thresholds, how='left', on='state')
+df_with_thresholds[df_with_thresholds['fraud_score'] >= df_with_thresholds['threshold']].drop(columns='threshold')
+```
+
+**💡 Insight:**  
+- To calculate the percentile for some column within group, use `percentile_cont(0.95) within group (order by)`

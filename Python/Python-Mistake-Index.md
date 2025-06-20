@@ -26,6 +26,9 @@ Click on each link to jump to the full explanation in `StrataScratch-Mistakes.md
 - [Total Transactions Per Customer – Forgot to reset index](Python-Mistakes.md#-problem-total-transactions-per-customer)  
   → Use `.dt.strftime('%Y-%m')` to convert the date format.
 
+- [Top Percentile Fraud](Python-Mistakes.md#-11-top-percentile-fraud)  
+  → Didn't know how to calculate the top 5 perentile of claims with the highest fraud scores. 
+
 ---
 
 ## Apply / Lambda Functions

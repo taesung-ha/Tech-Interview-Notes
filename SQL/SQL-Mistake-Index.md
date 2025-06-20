@@ -27,6 +27,9 @@ Grouped by concept for quick reference and pattern recognition.
 - [Class Performance (LeetCode)](https://leetcode.com/problems/classes-more-than-5-students/)  
   → Missed filtering after aggregation (HAVING vs WHERE confusion).
 
+- [Top Percentile Fraud (StrataScratch)](https://platform.stratascratch.com/coding/10303-top-percentile-fraud?code_type=2)  
+  → Didn't know how to calculate the top 5 perentile of claims with the highest fraud scores.
+
 ---
 
 ## 🟪 Date & Time Functions

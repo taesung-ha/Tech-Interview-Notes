@@ -384,3 +384,84 @@ group by
 
 **💡 Insight:**  
 Whenever you want to convert date column(ex. YYYY-MM-DD) into the desired string format like 'YYYY-MM', especially in PostgreSQL, use `to_char(date_column, 'YYYY-mm')`.
+
+---
+
+## 🧪 [12] Top Percentile Fraud
+🔗 https://platform.stratascratch.com/coding/10303-top-percentile-fraud?code_type=2
+📄 Table: `fb_comments_count`, `fb_active_users`
+
+**❌ Mistake:**  
+Failed to convert date column into the desired string format since `date_format` does not work in PostSQL.
+
+**✅ Fix:**  
+USE `to_char(column, 'YYYY-mm')`
+
+```sql
+with t2019_12 as (
+select 
+    sum(fcc.number_of_comments) as total_number,
+    fau.country,
+    dense_rank() over (order by sum(fcc.number_of_comments) desc)
+from 
+    fb_comments_count as fcc
+left join
+    fb_active_users as fau
+on
+    fcc.user_id = fau.user_id
+where
+    to_char(fcc.created_at,'YYYY-mm') = '2019-12' and fau.country is not null
+group by
+    fau.country)
+, 
+t2020_01 as (
+select 
+    sum(fcc.number_of_comments) as total_number,
+    fau.country,
+    dense_rank() over (order by sum(fcc.number_of_comments) desc)
+from 
+    fb_comments_count as fcc
+left join
+    fb_active_users as fau
+on
+    fcc.user_id = fau.user_id
+where
+    to_char(fcc.created_at,'YYYY-mm') = '2020-01' and fau.country is not null
+group by
+    fau.country
+)
+
+select
+    t2019_12.country
+from
+    t2019_12
+left join
+    t2020_01
+on
+    t2019_12.country = t2020_01.country
+where
+    t2019_12.dense_rank > t2020_01.dense_rank
+
+)
+
+select
+    l.user_id,
+    avg(e.min - l.max)
+from
+    page_load_date as l
+left join
+    page_exit_date as e
+on
+    l.user_id = e.user_id
+and
+    l.rn = e.rn
+where
+    e.min-l.max is not null
+group by
+    l.user_id
+```
+**📌 Missed Concept:**
+- `to_char(fcc.created_at, 'YYYY-mm') = `
+
+**💡 Insight:**  
+Whenever you want to convert date column(ex. YYYY-MM-DD) into the desired string format like 'YYYY-MM', especially in PostgreSQL, use `to_char(date_column, 'YYYY-mm')`.

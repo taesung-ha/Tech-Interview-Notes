@@ -284,4 +284,4 @@ df_with_thresholds[df_with_thresholds['fraud_score'] >= df_with_thresholds['thre
 ```
 
 **💡 Insight:**  
-- To calculate the percentile for some column within group, use `percentile_cont(0.95) within group (order by)`
+- To calculate the percentile for some column within group, use `percentile_cont(0.95) within group (order by)`.

@@ -56,3 +56,52 @@ class Solution:
 
 ---
 
+# 📘 Queues
+
+## ✅ Summary
+- While a stack followed a LIFO pattern, a queue follows **FIFO** (first in first out). 
+- Queues are trickier to implement than stacks if you want to maintain good performance, since operations on the front of the array (adding or removal) are $O(n)$.  
+
+## 🔹 Pattern 1: Number of Recent Calls
+
+| Item               | Description |
+|--------------------|-------------|
+| **Core Idea**       | Remove values less than less than $t-3000$ from the front.|
+| **Strength**     | If you use an efficient queue (deque), then those removals become $O(1)$. |
+| **Python Tips**     | In python, implementing collections.deque allows us to perform dequeue operations from the front in $O(1)$.   
+| **Sample Code**     |
+
+```python
+from collections import deque
+
+class RecentCounter:
+    def __init__(self):
+        self.queue = deque()
+
+    def ping(self, t: int) -> int:
+        while self.queue and self.queue[0] < t - 3000:
+            self.queue.popleft()
+        
+        self.queue.append(t)
+        return len(self.queue)
+```
+
+### 🧠 Edge Cases & Mistakes
+
+
+### 💡 Tips
+
+
+### 🧪 Mistake Log
+
+#### ❌ LeetCode 
+
+**❌ Mistake:**  
+
+**✅ Fix:**  
+
+```python
+```
+**📌 Missed Function:**  
+
+**💡 Insight:**  

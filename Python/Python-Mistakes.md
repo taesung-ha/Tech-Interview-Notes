@@ -285,3 +285,30 @@ df_with_thresholds[df_with_thresholds['fraud_score'] >= df_with_thresholds['thre
 
 **💡 Insight:**  
 - To calculate the percentile for some column within group, use `percentile_cont(0.95) within group (order by)`.
+
+---
+
+## 🧪 [12] Problem: Election Results
+
+🔗 https://platform.stratascratch.com/coding/2099-election-results?code_type=2  
+
+**❌ Mistake:**  
+Forgot how to remove rows with null values. 
+
+**✅ Fix:**  
+Use `df.dropna()`
+
+```python
+import pandas as pd
+
+voting_results = voting_results.dropna()
+voter_counts = voting_results.groupby('voter')['candidate'].count().reset_index()
+merge = pd.merge(voting_results, voter_counts, how='left', left_on='voter', right_on='voter')
+merge['candidate_y'] = merge['candidate_y'].apply(lambda x: 1/x if x!=0 else 0)
+merge.columns = ['voter', 'candidate', 'weighted_vote']
+merge.sort_values(by='candidate')
+weighted_candidate = merge.groupby('candidate')['weighted_vote'].sum().reset_index().sort_values(by='weighted_vote', ascending=False)
+weighted_candidate['candidate'].head(1)
+```
+
+---

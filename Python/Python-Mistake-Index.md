@@ -63,6 +63,10 @@ Click on each link to jump to the full explanation in `StrataScratch-Mistakes.md
   → If a specific column contains multiple values concatenated together, use `df['column'].str.split(';')` to split them within each row. 
   [[Go to Mistake]](Python-Mistakes.md#9-review-of-categories)
 
+- [Election Results – Forgot how to remove rows with null values](https://platform.stratascratch.com/coding/2099-election-results?code_type=2)  
+  → Use `df.dropna()`
+  [[Go to Mistake]](Python-Mistakes.md#12-problem-election-results)
+
 ---
 
 ## Regular Expression

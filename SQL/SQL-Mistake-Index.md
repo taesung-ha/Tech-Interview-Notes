@@ -78,6 +78,9 @@ Grouped by concept for quick reference and pattern recognition.
 - [Reviews of Categories](https://platform.stratascratch.com/coding/10049-reviews-of-categories/official-solution?code_type=1)  
   → Didn't know how to split the columns based on the specific string. 
 
+- [Largest Olympics](https://platform.stratascratch.com/coding/9942-largest-olympics?code_type=1)  
+  → failed to count distinct values for the number of atheletes. 
+
 ---
 
 ## 🧠 Tip

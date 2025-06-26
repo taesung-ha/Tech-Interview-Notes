@@ -428,3 +428,31 @@ where
 
 **💡 Insight:**  
 To calculate the percentile for some column within group, use `percentile_cont(0.95) within group (order by)`
+
+---
+
+## 🧪 [13] Problem: Largest Olympics
+🔗 https://platform.stratascratch.com/coding/9942-largest-olympics?code_type=1 
+📄 Table: `olympics_athletes_events`
+
+**❌ Mistake:**  
+failed to count distinct values for the number of atheletes. 
+
+**✅ Fix:**  
+Use `count(distinct id)` to count the distinct number of people. 
+
+```sql
+select 
+    games,
+    count(distinct id) as athletes_count
+from  
+    olympics_athletes_events 
+group by
+    games
+order by 
+    count(distinct id) desc
+limit 1;
+```
+**📌 Missed Concept:**
+
+- Way to count distinct number. 

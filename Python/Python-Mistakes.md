@@ -312,3 +312,27 @@ weighted_candidate['candidate'].head(1)
 ```
 
 ---
+
+## 🧪 [14] Problem: Processed Ticket Rate By Type
+
+🔗 https://platform.stratascratch.com/coding/9781-find-the-rate-of-processed-tickets-for-each-type?code_type=2
+📄 Table: `facebook_complaints`
+
+**❌ Mistake:**  
+Didn't realize to apply multiple aggregation functions at once using the `agg` method with the `groupby` function. 
+
+**✅ Fix:**  
+Use `df.groupby(['column']).agg({'column1':'sum', 'column2':'count'})` 
+
+```python
+import pandas as pd
+facebook_complaints['processed'] = facebook_complaints['processed'].astype(int)
+grouped = facebook_complaints.groupby(['type']).agg({'processed':'sum', 'complaint_id':'count'}).reset_index()
+grouped['processed_rate'] = (grouped['processed'] / grouped['complaint_id']).round(2)
+grouped[['type', 'processed_rate']]
+```
+**📌 Missed Concept:**
+- `cast(sum(spam) as float)`
+
+**💡 Insight:**  
+In Python, you don't have to use multiple groupby calculation separately. Just use `df.groupby(['column']).agg({'column1':'sum', 'column2':'count'})`

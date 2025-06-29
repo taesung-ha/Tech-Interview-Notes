@@ -42,8 +42,8 @@ Grouped by concept for quick reference and pattern recognition.
 - [Average Daily Sales (Custom)](https://platform.stratascratch.com/coding/12345/avg-daily-sales)  
   → Grouped by `created_at` without truncating to day.
 
-- [Average Daily Sales (Custom)](https://platform.stratascratch.com/coding/12345/avg-daily-sales)  
-  → Grouped by `created_at` without truncating to day.
+- [Best Selling Item](https://platform.stratascratch.com/coding/10172-best-selling-item?code_type=1)  
+→ Forgot how to keep only the month from a date. 
 ---
 
 ## 🟥 Window Functions

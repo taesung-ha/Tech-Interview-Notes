@@ -336,3 +336,30 @@ grouped[['type', 'processed_rate']]
 
 **💡 Insight:**  
 In Python, you don't have to use multiple groupby calculation separately. Just use `df.groupby(['column']).agg({'column1':'sum', 'column2':'count'})`
+
+---
+
+## 🧪 [15] Problem: Best Selling Item
+
+🔗 https://platform.stratascratch.com/coding/10172-best-selling-item?code_type=2  
+📄 Table: `online_retail`
+
+**❌ Mistake:**  
+Didn't realize to apply multiple merge `on` conditions. 
+
+**✅ Fix:**  
+Use `pd.merge(df1, df2, how='in', on=['column1', 'column2'])`
+```python
+import pandas as pd
+
+online_retail['month'] = online_retail['invoicedate'].dt.strftime('%m')
+online_retail['total_paid'] = online_retail['quantity'] * online_retail['unitprice']
+groupby = online_retail.groupby('month')['total_paid'].max().reset_index()
+preprocessing = online_retail.groupby(['description', 'month'])['total_paid'].sum().reset_index()
+groupby_preprocessing = preprocessing.groupby('month')['total_paid'].max().reset_index()
+ans = pd.merge(groupby_preprocessing, preprocessing, how='left', on=['month', 'total_paid'])
+ans[['month', 'description', 'total_paid']]
+```
+
+**💡 Insight:**  
+In Python, if you don't apply multiple on conditions in merge, you could not merge the datasets correclty. 

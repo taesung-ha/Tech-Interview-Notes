@@ -8,9 +8,12 @@ Click on each link to jump to the full explanation in `StrataScratch-Mistakes.md
 
 ## Merge / Join Mistakes
 
-- Lyft Driver Wages – Used INNER JOIN instead of LEFT JOIN [(StrataScratch)](https://www.stratascratch.com/?via=signupnow&gad_source=1&gbraid=0AAAAA_CeujGTpJbwKfJvLlHyqRKxeS55b&gclid=CjwKCAjwn6LABhBSEiwAsNJrjpcjMuRtBp0l2wJGRVR4Pz5r8l3axl5GtDQWx-04MKIarole2Pm1WxoCKGkQAvD_BwE) [[Go to Mistake]](Python-Mistakes.md#1-problem-lyft-driver-wages)
-
+- Lyft Driver Wages – Used INNER JOIN instead of LEFT JOIN [(StrataScratch)](https://www.stratascratch.com/?via=signupnow&gad_source=1&gbraid=0AAAAA_CeujGTpJbwKfJvLlHyqRKxeS55b&gclid=CjwKCAjwn6LABhBSEiwAsNJrjpcjMuRtBp0l2wJGRVR4Pz5r8l3axl5GtDQWx-04MKIarole2Pm1WxoCKGkQAvD_BwE) [[Go to Mistake]](Python-Mistakes.md#1-problem-lyft-driver-wages)  
   → Rows were dropped due to default join behavior.
+
+- Best Selling Item – Didn't realize to apply multiple merge `on` conditions.  [(StrataScratch)](https://platform.stratascratch.com/coding/10172-best-selling-item?code_type=2) [[Go to Mistake]](Python-Mistakes.md#15-problem-best-selling-item)  
+  → Use `pd.merge(df1, df2, how='in', on=['column1', 'column2'])`
+
 
 ---
 

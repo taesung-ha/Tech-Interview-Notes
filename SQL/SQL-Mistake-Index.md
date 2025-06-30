@@ -55,7 +55,7 @@ Grouped by concept for quick reference and pattern recognition.
   → Didn't partition by user, window summed all rows.
 
 - [Users By Average Session Time](https://platform.stratascratch.com/coding/2007-rank-variance-per-country?python=&utm_source=youtube&utm_medium=click&utm_campaign=YT+description+link&code_type=1)  
-  → Failed to convert date column into the desired string format
+  → Failed to convert date column into the desired string format.
 
 ---
 

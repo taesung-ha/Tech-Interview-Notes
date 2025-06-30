@@ -363,3 +363,25 @@ ans[['month', 'description', 'total_paid']]
 
 **💡 Insight:**  
 In Python, if you don't apply multiple on conditions in merge, you could not merge the datasets correclty. 
+
+---
+
+## 🧪 [16] Problem: Top 10 Songs 2010
+
+🔗 https://platform.stratascratch.com/coding/9650-find-the-top-10-ranked-songs-in-2010?code_type=2
+📄 Table: `online_retail`
+
+**❌ Mistake:**  
+Didn't know how to delete duplicate data based on a specific column. 
+
+**✅ Fix:**  
+Use `df.drop_dupliates(subset='column_name')`
+```python
+import pandas as pd
+
+top_100_2010 = billboard_top_100_year_end[billboard_top_100_year_end['year'] == 2010]
+top_100_2010 = top_100_2010[['group_name', 'song_name']]
+top_100_2010 = top_100_2010.drop_duplicates(subset='song_name')
+top_100_2010['rank'] = range(1, len(top_100_2010)+1)
+top_100_2010.head(10)
+```

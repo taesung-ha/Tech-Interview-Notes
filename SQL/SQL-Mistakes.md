@@ -508,3 +508,57 @@ AND
 
 **💡 Insight:**  
 To change the date format, use `to_char` in postgreSQL. 
+
+---
+
+## 🧪 [15] Top 10 Songs 2010
+
+
+
+🔗 https://platform.stratascratch.com/coding/10172-best-selling-item?code_type=1  
+📄 Table: `fraud_score`  
+
+**❌ Mistake:**  
+Forgot how to keep only the month from a date. 
+
+**✅ Fix:**  
+Use `to_char(date, 'MM')`
+
+```sql
+WITH table1 as (
+SELECT 
+    to_char(invoicedate, 'MM') AS month,
+    description,
+    sum(quantity*unitprice) AS total_paid
+FROM 
+    online_retail
+GROUP BY
+    month, description
+ORDER BY
+    month)
+
+SELECT
+    table1.month,
+    table1.description,
+    table2.total_paid
+FROM (SELECT
+    month,
+    max(total_paid) AS total_paid
+FROM
+    table1
+GROUP BY
+    month) AS table2
+LEFT JOIN
+    table1
+ON
+    table1.month = table2.month
+AND
+    table1.total_paid = table2.total_paid
+
+```
+**📌 Missed Concept:**
+
+- `to_char(date, 'MM')`
+
+**💡 Insight:**  
+To change the date format, use `to_char` in postgreSQL. 

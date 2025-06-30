@@ -70,6 +70,11 @@ Click on each link to jump to the full explanation in `StrataScratch-Mistakes.md
   → Use `df.dropna()`
   [[Go to Mistake]](Python-Mistakes.md#12-problem-election-results)
 
+- [Top 10 Songs 2010 – Didn't know how to delete duplicate data based on a specific column. 
+](https://platform.stratascratch.com/coding/9650-find-the-top-10-ranked-songs-in-2010?code_type=2)  
+  → Use `df.drop_dupliates(subset='column_name')`
+  [[Go to Mistake]](Python-Mistakes.md#16-problem-top-10-songs-2010)
+
 ---
 
 ## Regular Expression

@@ -67,8 +67,11 @@ Grouped by concept for quick reference and pattern recognition.
 - [Duplicate Emails (LeetCode 196)](https://leetcode.com/problems/duplicate-emails/)  
   → Used `WHERE` without GROUP BY HAVING COUNT > 1.
 
-- [Aromba-based Winery Search](https://platform.stratascratch.com/coding/10026-find-all-wineries-which-produce-wines-by-possessing-aromas-of-plum-cherry-rose-or-hazelnut?code_type=2  )  
+- [Aromba-based Winery Search](https://platform.stratascratch.com/coding/10026-find-all-wineries-which-produce-wines-by-possessing-aromas-of-plum-cherry-rose-or-hazelnut?code_type=2)  
   → Wasn't familiar with regular expression syntax.
+
+- [Top 10 Songs 2010](https://platform.stratascratch.com/coding/9650-find-the-top-10-ranked-songs-in-2010?code_type=1)  
+  → Didn't know how to match a distinct column with other data.
 
 ---
 

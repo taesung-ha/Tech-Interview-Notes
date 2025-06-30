@@ -369,7 +369,7 @@ In Python, if you don't apply multiple on conditions in merge, you could not mer
 ## 🧪 [16] Problem: Top 10 Songs 2010
 
 🔗 https://platform.stratascratch.com/coding/9650-find-the-top-10-ranked-songs-in-2010?code_type=2
-📄 Table: `online_retail`
+📄 Table: `billboard_top_100_year_end`
 
 **❌ Mistake:**  
 Didn't know how to delete duplicate data based on a specific column. 

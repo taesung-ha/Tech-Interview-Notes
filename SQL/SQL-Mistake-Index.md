@@ -73,6 +73,9 @@ Grouped by concept for quick reference and pattern recognition.
 - [Top 10 Songs 2010](https://platform.stratascratch.com/coding/9650-find-the-top-10-ranked-songs-in-2010?code_type=1)  
   → Didn't know how to match a distinct column with other data.
 
+- [Counting Instances in Text](https://platform.stratascratch.com/coding/9814-counting-instances-in-text?code_type=1)  
+  → Failed to search the row that include the exact specific word. 
+
 ---
 
 ## 🟫 Miscellaneous

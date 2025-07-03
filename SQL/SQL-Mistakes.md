@@ -549,3 +549,47 @@ limit 10;
 ```
 **📌 Missed Concept:**  
 - `distinct on (column)`
+
+---
+
+## 🧪 [16] Counting Instances in Text
+
+🔗 https://platform.stratascratch.com/coding/9814-counting-instances-in-text?code_type=1  
+📄 Table: `google_file_store'
+
+**❌ Mistake:**  
+Failed to search the row that include the exact specific word. 
+
+**✅ Fix:**  
+Use `\m(word)\M'
+
+```sql
+SELECT
+    table1.word,
+    count(*) as nentry
+FROM (
+SELECT
+    'bear' as word
+FROM
+    google_file_store
+WHERE
+    lower(contents) ~ '\m(bear)\M'
+
+UNION ALL
+
+SELECT
+    'bull' as word
+FROM
+    google_file_store
+WHERE
+    lower(contents) ~ '\m(bull)\M') as table1
+GROUP BY
+    table1.word
+ORDER BY
+    table1.word desc
+```
+**📌 Missed Concept:**
+- Use `\m(word)\M'`
+
+**💡 Insight:**  
+When you want to search the row that include the word that you are interested, you need to use not only `like` function, but also regular expression. 
